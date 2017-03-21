@@ -67,28 +67,44 @@ makeHobbits()
 // Part 3
 
 function keepItSecretKeepItSafe() {
-  
-  // create a div with an id of 'the-ring'
-  // give the div a class of 'magic-imbued-jewelry'
-  // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-  // add the ring as a child of Frodo
+  var ring = document.createElement("div")
+  var ringId = ring.setAttribute("id", "the-ring")
+  var ringClass = ring.setAttribute("class", "magic-imbued-jewelry")
+  var shireHobbitsList = body.querySelectorAll("article")[0]
+  var frodo = shireHobbitsList.querySelectorAll("li")[0]
+  frodo.appendChild(ring)
+
+  ring.addEventListener("click", nazgulScreech)
 }
 
+keepItSecretKeepItSafe()
 
 // Part 4
 
-
 function makeBuddies() {
-  // create an aside tag
-  // attach an unordered list of the 'buddies' in the aside
-  // insert your aside as a child element of rivendell
+//Making buddies container
+  var allies = document.createElement("aside")
+  var rivendell = body.querySelectorAll("article")[1]
+  rivendell.appendChild(allies)
+  var buddyList = document.createElement("ul")
+  allies.appendChild(buddyList)
+  console.log(rivendell);
+
+//Making individual buddies | Looping names to buddies
+  buddies.forEach(function(idiots) {
+    var buddy = document.createElement("li")
+    buddy.textContent = idiots
+    buddyList.appendChild(buddy)
+  })
 }
 
+makeBuddies()
 
 // Part 5
 
 
 function beautifulStranger() {
+  
   // change the 'Strider' textnode to 'Aragorn'
 }
 
