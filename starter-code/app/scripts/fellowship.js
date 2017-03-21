@@ -42,12 +42,13 @@ function makeMiddleEarth() {
 
 makeMiddleEarth();
 
-
+var shire = body.querySelectorAll("article")[0]
+var rivendell = body.querySelectorAll("article")[1]
+var mordor = body.querySelectorAll("article")[2]
 // Part 2
 
 function makeHobbits() {
 //Making hobbit container
-  var shire = body.querySelectorAll("article")[0]
   var shireHobbits = document.createElement("ul")
   console.log(shireHobbits);
   shire.appendChild(shireHobbits)
@@ -70,8 +71,7 @@ function keepItSecretKeepItSafe() {
   var ring = document.createElement("div")
   var ringId = ring.setAttribute("id", "the-ring")
   var ringClass = ring.setAttribute("class", "magic-imbued-jewelry")
-  var shireHobbitsList = body.querySelectorAll("article")[0]
-  var frodo = shireHobbitsList.querySelectorAll("li")[0]
+  var frodo = shire.querySelectorAll("li")[0]
   frodo.appendChild(ring)
 
   ring.addEventListener("click", nazgulScreech)
@@ -79,16 +79,15 @@ function keepItSecretKeepItSafe() {
 
 keepItSecretKeepItSafe()
 
+
 // Part 4
 
 function makeBuddies() {
 //Making buddies container
   var allies = document.createElement("aside")
-  var rivendell = body.querySelectorAll("article")[1]
   rivendell.appendChild(allies)
   var buddyList = document.createElement("ul")
   allies.appendChild(buddyList)
-  console.log(rivendell);
 
 //Making individual buddies | Looping names to buddies
   buddies.forEach(function(idiots) {
@@ -103,8 +102,7 @@ makeBuddies()
 // Part 5
 
 function beautifulStranger() {
-  var striderLand = body.querySelectorAll("article")[1]
-  var strider = striderLand.querySelectorAll("li")[3]
+  var strider = rivendell.querySelectorAll("li")[3]
   strider.textContent = "Aragorn"
 }
 
@@ -115,29 +113,33 @@ beautifulStranger()
 
 function leaveTheShire() {
 //Defining Shire and Hobbits in Shire
-  var shireLand = body.querySelectorAll("article")[0]
-  var hobbitRollCall = shireLand.querySelector("ul")
+  var hobbitRollCall = shire.querySelector("ul")
 
 //Removing Hobbits from Shire
-  var assemble = shireLand.removeChild(hobbitRollCall)
+  var assemble = shire.removeChild(hobbitRollCall)
 
 //Moving them to Rivendell
-  var rivendellLand = body.querySelectorAll("article")[1]
-  rivendellLand.appendChild(assemble)
+  rivendell.appendChild(assemble)
 }
 
 leaveTheShire()
 
 
 // Part 7
-
+var members = rivendell.querySelectorAll("li")
 
 function forgeTheFellowShip() {
-  // create a new div called 'the-fellowship' within rivendell
-  // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+  var theFellowship = document.createElement("div")
+  var fellowshipId = theFellowship.setAttribute("id", "the-fellowship")
+  rivendell.appendChild(theFellowship)
+
+  members.forEach(function(recruit) {
+    theFellowship.appendChild(recruit)
+    // alert("New bitch:" + recruit.textContent + " has joined you!")
+  })
 }
 
+forgeTheFellowShip()
 
 // Part 8
 
