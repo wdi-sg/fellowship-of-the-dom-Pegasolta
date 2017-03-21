@@ -126,6 +126,7 @@ leaveTheShire()
 
 
 // Part 7
+//Listing out all the members
 var members = rivendell.querySelectorAll("li")
 
 function forgeTheFellowShip() {
@@ -145,29 +146,41 @@ forgeTheFellowShip()
 
 
 function theBalrog() {
-  // change the 'Gandalf' textNode to 'Gandalf the White'
-  // apply style to the element
-  // make the background 'white', add a grey border
+  var gandalf = rivendell.querySelectorAll("li")[0]
+  gandalf.textContent = "Gandalf the Daft"
+  gandalf.style.background = "white"
+  gandalf.style.border = "5px solid grey"
 }
+
+theBalrog()
 
 
 // Part 9
 
 function hornOfGondor() {
-  // pop up an alert that the horn of gondor has been blown
-  // Boromir's been killed by the Uruk-hai!
-  // put a linethrough on boromir's name
-  // Remove Boromir from the Fellowship
+  alert("Horn of Goondoos have been blown")
+  var boromir = rivendell.querySelectorAll("li")[4]
+  // boromir.style.setProperty("text-decoration", "linethrough")
+
+  var fellowshipMinusOne = document.querySelector("#the-fellowship")
+  fellowshipMinusOne.removeChild(boromir)
 }
 
+hornOfGondor()
 
 // Part 10
 
 function itsDangerousToGoAlone(){
+  var mountDoom = document.createElement("div")
+  var mountDoomId = mountDoom.setAttribute("id", "mount-doom")
+  mordor.appendChild(mountDoom)
+  var gays = rivendell.querySelectorAll(".hobbit")[0,1]
+console.log(mountDoom);
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
 }
 
+itsDangerousToGoAlone()
 
 // Part 11
 
