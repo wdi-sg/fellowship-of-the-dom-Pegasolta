@@ -24,10 +24,20 @@ var body = document.querySelector('body');
 
 
 function makeMiddleEarth() {
-  // create a section tag with an id of middle-earth
-  // add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
-  // append middle-earth to your document body
+//Making continent
+  var continent = document.createElement("section")
+  var sec = continent.setAttribute("id", "middle-earth")
+  body.appendChild(continent)
+
+//looping through the 3 lands | Making lands | Assigning 3 names to lands
+  lands.forEach(function(middleland) {
+    var continentLand = document.createElement("article")
+    var landTitle = document.createElement("h1")
+    landTitle.textContent = middleland
+    continent.appendChild(continentLand)
+    continentLand.appendChild(landTitle)
+  })
+  console.log(continent)
 }
 
 makeMiddleEarth();
@@ -36,14 +46,28 @@ makeMiddleEarth();
 // Part 2
 
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (which is the second article tag on the page)
-  // give each hobbit a class of hobbit
+//Making hobbit container
+  var shire = body.querySelectorAll("article")[0]
+  var shireHobbits = document.createElement("ul")
+  console.log(shireHobbits);
+  shire.appendChild(shireHobbits)
+
+//Making Hobbits | Looping assigning names | Looping assigning class
+  hobbits.forEach(function(midgets) {
+    var hobbit = document.createElement("li")
+    hobbit.textContent = midgets
+    shireHobbits.appendChild(hobbit)
+    var hobbitClass = hobbit.setAttribute("class", "hobbit")
+  })
 }
+
+makeHobbits()
 
 
 // Part 3
 
 function keepItSecretKeepItSafe() {
+  
   // create a div with an id of 'the-ring'
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
