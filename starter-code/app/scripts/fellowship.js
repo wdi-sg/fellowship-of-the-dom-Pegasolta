@@ -102,18 +102,31 @@ makeBuddies()
 
 // Part 5
 
-
 function beautifulStranger() {
-  
-  // change the 'Strider' textnode to 'Aragorn'
+  var striderLand = body.querySelectorAll("article")[1]
+  var strider = striderLand.querySelectorAll("li")[3]
+  strider.textContent = "Aragorn"
 }
+
+beautifulStranger()
 
 
 // Part 6
 
 function leaveTheShire() {
-  // assemble the hobbits and move them to Rivendell
+//Defining Shire and Hobbits in Shire
+  var shireLand = body.querySelectorAll("article")[0]
+  var hobbitRollCall = shireLand.querySelector("ul")
+
+//Removing Hobbits from Shire
+  var assemble = shireLand.removeChild(hobbitRollCall)
+
+//Moving them to Rivendell
+  var rivendellLand = body.querySelectorAll("article")[1]
+  rivendellLand.appendChild(assemble)
 }
+
+leaveTheShire()
 
 
 // Part 7
