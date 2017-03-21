@@ -169,11 +169,11 @@ function hornOfGondor() {
 hornOfGondor()
 
 // Part 10
+var mountDoom = document.createElement("div")
+var mountDoomId = mountDoom.setAttribute("id", "mount-doom")
+mordor.appendChild(mountDoom)
 
 function itsDangerousToGoAlone(){
-  var mountDoom = document.createElement("div")
-  var mountDoomId = mountDoom.setAttribute("id", "mount-doom")
-  mordor.appendChild(mountDoom)
   var gays = rivendell.querySelectorAll(".hobbit")[0,1]
 console.log(mountDoom);
   // take Frodo and Sam out of the fellowship and move them to Mordor
@@ -185,10 +185,13 @@ itsDangerousToGoAlone()
 // Part 11
 
 function weWantsIt() {
-  // Create a div with an id of 'gollum' and add it to Mordor
+  var gollum = document.createElement("div")
+  var gollumId = gollum.setAttribute("id", "gollum")
+  mountDoom.appendChild(gollum)
   // Remove the ring from Frodo and give it to Gollum
-  // Move Gollum into Mount Doom
 }
+
+weWantsIt()
 
 
 // Part 12
