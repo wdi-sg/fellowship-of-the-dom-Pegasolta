@@ -66,9 +66,10 @@ makeHobbits()
 
 
 // Part 3
+var frodo = shire.querySelectorAll("li")[0]
+var ring = document.createElement("div")
 
 function keepItSecretKeepItSafe() {
-  var ring = document.createElement("div")
   var ringId = ring.setAttribute("id", "the-ring")
   var ringClass = ring.setAttribute("class", "magic-imbued-jewelry")
   var frodo = shire.querySelectorAll("li")[0]
@@ -115,11 +116,8 @@ function leaveTheShire() {
 //Defining Shire and Hobbits in Shire
   var hobbitRollCall = shire.querySelector("ul")
 
-//Removing Hobbits from Shire
-  var assemble = shire.removeChild(hobbitRollCall)
-
 //Moving them to Rivendell
-  rivendell.appendChild(assemble)
+  rivendell.appendChild(hobbitRollCall)
 }
 
 leaveTheShire()
@@ -172,12 +170,10 @@ hornOfGondor()
 var mountDoom = document.createElement("div")
 var mountDoomId = mountDoom.setAttribute("id", "mount-doom")
 mordor.appendChild(mountDoom)
-
+var sam = rivendell.querySelectorAll(".hobbit")[1]
 function itsDangerousToGoAlone(){
-  var gays = rivendell.querySelectorAll(".hobbit")[0,1]
-console.log(mountDoom);
-  // take Frodo and Sam out of the fellowship and move them to Mordor
-  // add a div with an id of 'mount-doom' to Mordor
+  mordor.appendChild(sam)
+  mordor.appendChild(frodo)
 }
 
 itsDangerousToGoAlone()
@@ -188,7 +184,7 @@ function weWantsIt() {
   var gollum = document.createElement("div")
   var gollumId = gollum.setAttribute("id", "gollum")
   mountDoom.appendChild(gollum)
-  // Remove the ring from Frodo and give it to Gollum
+  gollum.appendChild(ring)
 }
 
 weWantsIt()
